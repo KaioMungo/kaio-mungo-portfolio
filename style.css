@@ -369,17 +369,22 @@ main{
         font-size: 2.5rem;
     }
     
-    .sobre img{
-        grid-template-columns: 1/ -1;
-        justify-self: center;
+    .sobre {
+        grid-template-columns: 1fr;
     }
-
-    .sobre-conteudo{
-        grid-template-columns: 1/ -1;
-
+    
+    .sobre-conteudo {
+        grid-column: 1 / -1;
     }
 }
 
+
+
+@media screen and (max-width: 992px) {
+    article.sobre > img {
+        display: none !important;
+    }
+}
 
 
 
@@ -797,83 +802,46 @@ main{
 
 /* sessão ferramentas */
 
-.ferramentas{
+.ferramentas {
     padding: 60px 8%;
 }
-
-.ferramentas-titulo{
-    display: flex ;
-    gap: 15px;
-    justify-content: center;
-}
-
-.caixa-ferramentas{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    flex-direction: row;
-    gap: 1rem;
-    padding: 2rem;
-    width: 100%;
-    margin: 0 auto;
-    border: solid var(--vidro) 2px;
-    border-radius: 16px;
-}
-
-
-.list-ferramentas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    width: 100%;
-}
-
-.ferramenta_imagem {
-    width: 72px;
-    height: 75px;
-    object-fit: contain;
-    transition: .2s ease-in-out;
-}
-
-.ferramenta_imagem:hover{
-    transform: translateY(-4px);
-}
-
 
 .caixa-ferramentas {
     width: 100%;
     margin: 0 auto;
     padding: 2rem 0;
-    border: solid var(--vidro) 2px;
-    border-radius: 16px;
     overflow: hidden;
+    border: 2px solid var(--vidro);
+    border-radius: 16px;
 }
 
 .list-ferramentas {
     display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 2rem;
     width: max-content;
+    gap: 0;
     animation: carrossel 25s linear infinite;
+    will-change: transform;
+}
+
+.grupo-ferramentas {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
 }
 
 .ferramenta_imagem {
+    display: block;
+    flex-shrink: 0;
     width: 72px;
     height: 75px;
-    flex-shrink: 0;
     object-fit: contain;
-    transition: transform .2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 }
 
 .ferramenta_imagem:hover {
     transform: translateY(-4px);
-}
-
-.caixa-ferramentas:hover .list-ferramentas {
-    animation-play-state: paused;
 }
 
 @keyframes carrossel {
@@ -886,9 +854,10 @@ main{
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .list-ferramentas {
-        animation: none;
+/* Pausa ao passar o mouse em computadores. */
+@media (hover: hover) and (pointer: fine) {
+    .caixa-ferramentas:hover .list-ferramentas {
+        animation-play-state: paused;
     }
 }
 
