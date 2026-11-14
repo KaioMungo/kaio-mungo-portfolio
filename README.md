@@ -5,7 +5,7 @@ Portfólio pessoal desenvolvido para apresentar minha trajetória na tecnologia,
 <p align="center">
   <strong>Desenvolvimento Web · Tecnologia · Análise de Dados</strong>
 </p><p align="center">
-  <a href="kaio-mungo-portfolio.pages.dev" target="_blank">🌐 Acessar portfólio</a>
+  <a href="https://kaio-mungo-portfolio.pages.dev/" target="_blank">🌐 Acessar portfólio</a>
   &nbsp;|&nbsp;
   <a href="https://github.com/KaioMungo" target="_blank">GitHub</a>
   &nbsp;|&nbsp;
